@@ -9,6 +9,39 @@
 import UIKit
 
 class ViewController: UITableViewController {
+
+  let breeds = [
+    "British Shorthair",
+    "Siamese",
+    "Persian",
+    "Abyssinian",
+    "Maine Coon",
+    "Bengal",
+    "Sphynx",
+    "Ragdoll",
+    "American Shorthair",
+    "Exotic Shorthair",
+    "Burmese",
+    "Scottish Fold",
+    "Birman",
+    "Norwegian Forest",
+    ]
+
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return breeds.count
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "KittyCell", for: indexPath)
+    let breed = breeds[indexPath.row]
+    cell.textLabel?.text = breed
+    return cell
+  }
     
     
    
